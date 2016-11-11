@@ -7,7 +7,7 @@
 */
 int* arreglo_int(size_t num, int min, int max) {
 	srand(time(NULL));	//usamos el tiempo para cambiar los valores de rand()
-	int i, *arr = (int*) malloc(num*sizeof(int));
+	int i, *arr = (int*) calloc(num, sizeof(int));
 	for(i = 0; i < num; i++)
 		arr[i] = min + rand()%max;
 	return arr;
@@ -20,7 +20,7 @@ int* arreglo_int(size_t num, int min, int max) {
 */
 double* arreglo_double(size_t num, double min, double max) {
 	srand(time(NULL));		//usamos el tiempo para cambiar los valores de rand()
-	double *arr = (double*) malloc(num*sizeof(double));
+	double *arr = (double*) calloc(num, sizeof(double));
 	int i;
 	for(i = 0; i < num; i++)
 		arr[i] = (rand()/(double)RAND_MAX)*(max-min) + min;	//hago los rand() dobles
